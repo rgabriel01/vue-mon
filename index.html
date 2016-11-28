@@ -1,0 +1,42 @@
+<html>
+<head>
+  <link rel='stylesheet' href='./css/bootstrap.min.css'></link>
+  <link rel='stylesheet' href='./css/index.css'></link>
+</head>
+
+  <body>
+    <div class='container'>
+      <div class='row'>
+        <div class='col-xs-12'>
+          <div id='app'>
+            <p v-bind:title='hoverTitle'>
+              {{message}}
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class='row'>
+        <div class='col-xs-12 col-md-6'>
+          <div id='repos-list'>
+            <div>
+              <input type='text' id='name' placeholder="some awesome repository" class='form-control mb10'/>
+              <input type='text' id='url' placeholder="https://github.com/someguy/some-awesome-repo"class='form-control mb10'/>
+              <button v-on:click='addRepo' class='mb10'>Add Repo</button>
+            </div>
+            <ul>
+              <li v-for='repo in repos'>
+                {{repo.name}} / <a :href="repo.url">{{repo.name}}</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <script src='./js/jquery-3.1.1.min.js'></script>
+    <script src="./js/bootstrap.min.js"></script>
+    <script src='./js/vue.min.js'></script>
+    <script src='./js/index.js'></script>
+  </body>
+</html>
